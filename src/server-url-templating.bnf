@@ -1,0 +1,30 @@
+; OpenAPI Server URL templating ABNF syntax
+server-url-template    = 1*( literals / server-variable )
+server-variable        = "{" server-variable-name "}"
+server-variable-name   = 1*( unreserved / pct-encoded / sub-delims / ":" / "@" )
+literals               = 1*( %x21 / %x23-24 / %x26 / %x28-3B / %x3D / %x3F-5B
+                       / %x5D / %x5F / %x61-7A / %x7E / ucschar / iprivate
+                       / pct-encoded)
+                           ; any Unicode character except: CTL, SP,
+                           ;  DQUOTE, "'", "%" (aside from pct-encoded),
+                           ;  "<", ">", "\", "^", "`", "{", "|", "}"
+
+; Characters definitions (from RFC 6570)
+ALPHA          =  %x41-5A / %x61-7A   ; A-Z / a-z
+DIGIT          =  %x30-39             ; 0-9
+HEXDIG         =  DIGIT / "A" / "B" / "C" / "D" / "E" / "F"
+                 ; case-insensitive
+
+pct-encoded    =  "%" HEXDIG HEXDIG
+unreserved     =  ALPHA / DIGIT / "-" / "." / "_" / "~"
+sub-delims     =  "!" / "$" / "&" / "'" / "(" / ")"
+               /  "*" / "+" / "," / ";" / "="
+
+ucschar        =  %xA0-D7FF / %xF900-FDCF / %xFDF0-FFEF
+               /  %x10000-1FFFD / %x20000-2FFFD / %x30000-3FFFD
+               /  %x40000-4FFFD / %x50000-5FFFD / %x60000-6FFFD
+               /  %x70000-7FFFD / %x80000-8FFFD / %x90000-9FFFD
+               /  %xA0000-AFFFD / %xB0000-BFFFD / %xC0000-CFFFD
+               /  %xD0000-DFFFD / %xE1000-EFFFD
+
+iprivate       =  %xE000-F8FF / %xF0000-FFFFD / %x100000-10FFFD
