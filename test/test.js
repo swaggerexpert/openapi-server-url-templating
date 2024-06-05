@@ -20,6 +20,43 @@ describe('test', function () {
     assert.isTrue(test('/pets?offset{offset}limit={limit}'));
   });
 
+  context('given server URL template is a valid absolute URL without variables', function () {
+    specify('should detect as server URL template', function () {
+      assert.isTrue(test('https://gigantic-server.com:8000/basePath'));
+      assert.isTrue(test('http://gigantic-server.com:8000/basePath'));
+      assert.isTrue(test('https://gigantic-server.com/basePath'));
+      assert.isTrue(test('http://gigantic-server.com/basePath'));
+    });
+  });
+
+  context('given server URL template is an invalid absolute URL without variables', function () {
+    specify('should not detect as server URL template', function () {
+      assert.isFalse(test('http://[:::1]'));
+    });
+  });
+
+  context(
+    'given server URL template is a valid relative URI Reference without variables',
+    function () {
+      specify('should detect as server URL template', function () {
+        assert.isTrue(test('basePath'));
+        assert.isTrue(test('/basePath'));
+        assert.isTrue(test('/basePath?query=1'));
+        assert.isTrue(test('/basePath#fragment'));
+        assert.isTrue(test('/basePath?query=1#fragment'));
+      });
+    },
+  );
+
+  context(
+    'given server URL template is an invalid relative URI Reference without variables',
+    function () {
+      specify('should detect as server URL template', function () {
+        assert.isFalse(test('https://'));
+      });
+    },
+  );
+
   it('should not detect expression', function () {
     assert.isTrue(test('ftp://{username}.gigantic-server.com:{port}/{basePath}'));
     assert.isFalse(test('/pet/{petId'));
