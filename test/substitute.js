@@ -38,6 +38,12 @@ describe('substitute', function () {
     assert.equal(result, '/pets/%2F%3F%23');
   });
 
+  it('should avoid encoding "[" and "]" characters using encodeURIComponent', function () {
+    const result = substitute('/pets/{petId}', { petId: '[]' });
+
+    assert.equal(result, '/pets/[]');
+  });
+
   it('should substitute server variable with empty value', function () {
     const result = substitute('/pets/{petId}/test', { petId: '' });
 
