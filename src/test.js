@@ -8,20 +8,29 @@ import parse from './parse/index.js';
  * @param {boolean} [options.strict=true] - A boolean indicating presence of at least one `Server Variable` AST node.
  * @returns {boolean}
  */
-const test = (str, { strict = false } = {}) => {
+const test = (serverURLTemplate, { strict = false } = {}) => {
   try {
-    const parseResult = parse(str);
+    const parseResult = parse(serverURLTemplate);
 
     if (!parseResult.result.success) return false;
-    if (!strict) return true;
 
     const parts = [];
     parseResult.ast.translate(parts);
-    return parts.some(([type]) => type === 'server-variable')
+    const hasServerVariable = parts.some(([type]) => type === 'server-variable');
+
+    if (!strict && !hasServerVariable) {
+      try {
+        new URL(serverURLTemplate, 'https://vladimirgorej.com');
+        return true;
+      } catch {
+        return false;
+      }
+    }
+
+    return strict ? hasServerVariable : true;
   } catch {
     return false;
   }
 };
 
 export default test;
-
