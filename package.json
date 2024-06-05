@@ -35,7 +35,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/char0n/openapi-server-url-templating.git"
+    "url": "https://github.com/char0n/openapi-server-url-templating.git"
   },
   "keywords": [
     "openapi",
