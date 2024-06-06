@@ -1,21 +1,22 @@
 import parse from './parse/index.js';
 
-const isEncoded = (serverVariable) => {
+const isEncoded = (serverVariableValue) => {
   try {
     return (
-      typeof serverVariable === 'string' && decodeURIComponent(serverVariable) !== serverVariable
+      typeof serverVariableValue === 'string' &&
+      decodeURIComponent(serverVariableValue) !== serverVariableValue
     );
   } catch {
     return false;
   }
 };
 
-export const encodeServerVariable = (serverVariable) => {
-  if (isEncoded(serverVariable)) {
-    return serverVariable;
+export const encodeServerVariable = (serverVariableValue) => {
+  if (isEncoded(serverVariableValue)) {
+    return serverVariableValue;
   }
 
-  return encodeURIComponent(serverVariable).replace(/%5B/g, '[').replace(/%5D/g, ']');
+  return encodeURIComponent(serverVariableValue).replace(/%5B/g, '[').replace(/%5D/g, ']');
 };
 
 const significantTypes = ['literals', 'server-variable-name'];
