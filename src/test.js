@@ -3,7 +3,7 @@ import parse from './parse/index.js';
 /**
  * Test if a string is a server URL template.
  *
- * @param {string} str
+ * @param {string} serverURLTemplate
  * @param {Object} [options={}] - An object.
  * @param {boolean} [options.strict=true] - A boolean indicating presence of at least one `Server Variable` AST node.
  * @returns {boolean}
