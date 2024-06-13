@@ -35,7 +35,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/char0n/openapi-server-url-templating.git"
+    "url": "https://github.com/swaggerexpert/openapi-server-url-templating.git"
   },
   "keywords": [
     "openapi",
@@ -49,9 +49,9 @@
   "author": "Vladimír Gorej <vladimir.gorej@gmail.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/char0n/openapi-server-url-templating/issues"
+    "url": "https://github.com/swaggerexpert/openapi-server-url-templating/issues"
   },
-  "homepage": "https://github.com/char0n/openapi-server-url-templating#readme",
+  "homepage": "https://github.com/swaggerexpert/openapi-server-url-templating#readme",
   "files": [
     "es/",
     "cjs/",
