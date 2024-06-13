@@ -2,7 +2,7 @@
 
 [![npmversion](https://badge.fury.io/js/openapi-server-url-templating.svg)](https://www.npmjs.com/package/openapi-server-url-templating)
 [![npm](https://img.shields.io/npm/dm/openapi-server-url-templating.svg)](https://www.npmjs.com/package/openapi-server-url-templating)
-[![Test workflow](https://github.com/char0n/openapi-server-url-templating/actions/workflows/test.yml/badge.svg)](https://github.com/char0n/openapi-server-url-templating/actions)
+[![Test workflow](https://github.com/swaggerexpert/openapi-server-url-templating/actions/workflows/test.yml/badge.svg)](https://github.com/swaggerexpert/openapi-server-url-templating/actions)
 [![Dependabot enabled](https://img.shields.io/badge/Dependabot-enabled-blue.svg)](https://dependabot.com/)
 [![try on RunKit](https://img.shields.io/badge/try%20on-RunKit-brightgreen.svg?style=flat)](https://npm.runkit.com/openapi-server-url-templating)
 [![Tidelift](https://tidelift.com/badges/package/npm/openapi-server-url-templating)](https://tidelift.com/subscription/pkg/npm-openapi-server-url-templating?utm_source=npm-openapi-server-url-templating&utm_medium=referral&utm_campaign=readme)
@@ -286,6 +286,6 @@ iprivate       =  %xE000-F8FF / %xF0000-FFFFD / %x100000-10FFFD
 
 ## License
 
-`openapi-server-url-templating` is licensed under [Apache 2.0 license](https://github.com/char0n/openapi-server-url-templating/blob/main/LICENSE).
-`openapi-server-url-templating` comes with an explicit [NOTICE](https://github.com/char0n/openapi-server-url-templating/blob/main/NOTICE) file
+`openapi-server-url-templating` is licensed under [Apache 2.0 license](https://github.com/swaggerexpert/openapi-server-url-templating/blob/main/LICENSE).
+`openapi-server-url-templating` comes with an explicit [NOTICE](https://github.com/swaggerexpert/openapi-server-url-templating/blob/main/NOTICE) file
 containing additional legal notices and information.
