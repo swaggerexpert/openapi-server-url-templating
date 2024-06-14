@@ -1,4 +1,4 @@
-import { Ast as AST, Parser } from '#apg-lite';
+import { Ast as AST, Parser } from 'apg-lite';
 
 import Grammar from '../server-url-templating.js';
 import serverURLTemplateCallback from './callbacks/server-url-template.js';

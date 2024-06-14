@@ -19,6 +19,16 @@ module.exports = {
       ],
       plugins: [
         [path.join(__dirname, './scripts/babel-plugin-add-import-extension.cjs'), { extension: 'cjs' }],
+        ['module-resolver', {
+          resolvePath(sourcePath, currentFile) {
+            if (sourcePath === 'apg-lite') {
+              const apgLiteCJS = path.resolve('./src/apg-lite.cjs');
+              const currentDir = path.dirname(currentFile);
+              return path.relative(currentDir, apgLiteCJS);
+            }
+            return sourcePath;
+          },
+        }]
       ],
     },
     es: {
