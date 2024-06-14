@@ -1,4 +1,4 @@
-import { identifiers, utilities } from '#apg-lite';
+import { identifiers, utilities } from 'apg-lite';
 
 const serverVariableName = (state, chars, phraseIndex, phraseLength, data) => {
   if (state === identifiers.SEM_PRE) {
