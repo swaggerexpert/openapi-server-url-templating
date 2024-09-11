@@ -68,7 +68,7 @@
     "babel-plugin-module-resolver": "^5.0.2",
     "chai": "=5.1.1",
     "cross-env": "^7.0.3",
-    "husky": "=9.1.5",
+    "husky": "=9.1.6",
     "mocha": "=10.7.3",
     "prettier": "^3.3.1"
   }
