@@ -66,7 +66,7 @@
     "@commitlint/config-conventional": "=19.5.0",
     "apg-js": "^4.4.0",
     "babel-plugin-module-resolver": "^5.0.2",
-    "chai": "=5.1.1",
+    "chai": "=5.1.2",
     "cross-env": "^7.0.3",
     "husky": "=9.1.6",
     "mocha": "=10.7.3",
