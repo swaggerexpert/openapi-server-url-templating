@@ -15,7 +15,7 @@
   },
   "scripts": {
     "prepublishOnly": "npm run build",
-    "grammar:compile": "./node_modules/apg-js/bin/apg.sh --lite --in=./src/server-url-templating.bnf --out=./src/server-url-templating.js && cd ./src",
+    "grammar:compile": "node ./scripts/apg-js.js --lite --in=./src/server-url-templating.bnf --out=./src/server-url-templating.js && cd ./src",
     "build": "npm run grammar:compile && npm run build:es && npm run build:cjs && npm run build:cjs:apg-lite",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es --extensions '.js' --out-file-extension '.mjs'",
     "build:cjs": "cross-env BABEL_ENV=cjs babel src --out-dir cjs --extensions '.js' --out-file-extension '.cjs'",
