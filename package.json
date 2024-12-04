@@ -13,6 +13,9 @@
     "./package.json": "./package.json",
     "./server-variables.bnf": "./src/server-url-templating.bnf"
   },
+  "watch": {
+    "test": "{src,test}/*.js"
+  },
   "scripts": {
     "prepublishOnly": "npm run build",
     "grammar:compile": "node ./scripts/apg-js.js --lite --in=./src/server-url-templating.bnf --out=./src/server-url-templating.js && cd ./src",
@@ -20,7 +23,9 @@
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es --extensions '.js' --out-file-extension '.mjs'",
     "build:cjs": "cross-env BABEL_ENV=cjs babel src --out-dir cjs --extensions '.js' --out-file-extension '.cjs'",
     "build:cjs:apg-lite": "cross-env BABEL_ENV=cjs babel node_modules/apg-lite/lib/parser.js --out-file ./cjs/apg-lite.cjs",
-    "test": "mocha"
+    "test": "mocha",
+    "test:watch": "npm-watch test",
+    "watch": "npm-watch"
   },
   "engines": {
     "node": ">=12.20.0"
@@ -70,6 +75,7 @@
     "cross-env": "^7.0.3",
     "husky": "=9.1.7",
     "mocha": "=10.8.2",
+    "npm-watch": "^0.13.0",
     "prettier": "^3.3.1"
   }
 }
