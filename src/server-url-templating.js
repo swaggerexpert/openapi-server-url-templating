@@ -171,6 +171,7 @@ export default function grammar(){
   this.toString = function toString(){
     let str = "";
     str += "; OpenAPI Server URL templating ABNF syntax\n";
+    str += "; Aligned with RFC 6570 (https://www.rfc-editor.org/rfc/rfc6570)\n";
     str += "server-url-template    = 1*( literals / server-variable )\n";
     str += "server-variable        = \"{\" server-variable-name \"}\"\n";
     str += "server-variable-name   = 1*( unreserved / pct-encoded / sub-delims / \":\" / \"@\" )\n";

@@ -1,4 +1,5 @@
 ; OpenAPI Server URL templating ABNF syntax
+; Aligned with RFC 6570 (https://www.rfc-editor.org/rfc/rfc6570)
 server-url-template    = 1*( literals / server-variable )
 server-variable        = "{" server-variable-name "}"
 server-variable-name   = 1*( unreserved / pct-encoded / sub-delims / ":" / "@" )
