@@ -19,7 +19,9 @@ Server Object URL Templating defined in following OpenAPI specification versions
 - [OpenAPI 3.0.1](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.1.md#server-object)
 - [OpenAPI 3.0.2](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#server-object)
 - [OpenAPI 3.0.3](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#server-object)
+- [OpenAPI 3.0.4](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.4.md#server-object)
 - [OpenAPI 3.1.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#server-object)
+- [OpenAPI 3.1.1](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.1.md#server-object)
 
 <table>
   <tr>
