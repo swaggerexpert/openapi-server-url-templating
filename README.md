@@ -61,7 +61,7 @@ You can install `openapi-server-url-templating` using `npm`:
 ### Usage
 
 `openapi-server-url-templating` currently supports **parsing**, **validation** and **substitution**.
-Both parser and validator are based on a superset of [ABNF](https://www.rfc-editor.org/rfc/rfc5234) ([SABNF](https://cs.github.com/ldthomas/apg-js2/blob/master/SABNF.md))
+Both parser and validator are based on a superset of [ABNF](https://www.rfc-editor.org/rfc/rfc5234) ([SABNF](https://github.com/ldthomas/apg-js2/blob/master/SABNF.md))
 and use [apg-lite](https://github.com/ldthomas/apg-lite) parser generator.
 
 #### Parsing
