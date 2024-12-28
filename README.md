@@ -256,27 +256,24 @@ The Server URL Templating is defined by the following [ABNF](https://tools.ietf.
 
 ```abnf
 ; OpenAPI Server URL templating ABNF syntax
-; Aligned with RFC 6570 (https://www.rfc-editor.org/rfc/rfc6570)
-server-url-template    = 1*( literals / server-variable )
+server-url-template    = 1*( literals / server-variable ) ; variant of https://www.rfc-editor.org/rfc/rfc6570#section-2
 server-variable        = "{" server-variable-name "}"
-server-variable-name   = 1*( unreserved / pct-encoded / sub-delims / ":" / "@" )
-literals               = 1*( %x21 / %x23-24 / %x26 / %x28-3B / %x3D / %x3F-5B
+server-variable-name   = 1*( %x00-7A / %x7C / %x7E-10FFFF ) ; every UTF8 character except { and } (from OpenAPI)
+
+; https://www.rfc-editor.org/rfc/rfc6570#section-2.1
+; https://www.rfc-editor.org/errata/eid6937
+literals               = 1*( %x21 / %x23-24 / %x26-3B / %x3D / %x3F-5B
                        / %x5D / %x5F / %x61-7A / %x7E / ucschar / iprivate
                        / pct-encoded)
-                           ; any Unicode character except: CTL, SP,
-                           ;  DQUOTE, "'", "%" (aside from pct-encoded),
-                           ;  "<", ">", "\", "^", "`", "{", "|", "}"
+                            ; any Unicode character except: CTL, SP,
+                            ;  DQUOTE, "%" (aside from pct-encoded),
+                            ;  "<", ">", "\", "^", "`", "{", "|", "}"
 
-; Characters definitions (from RFC 6570)
-ALPHA          =  %x41-5A / %x61-7A   ; A-Z / a-z
+; https://www.rfc-editor.org/rfc/rfc6570#section-1.5
 DIGIT          =  %x30-39             ; 0-9
-HEXDIG         =  DIGIT / "A" / "B" / "C" / "D" / "E" / "F"
-                 ; case-insensitive
+HEXDIG         =  DIGIT / "A" / "B" / "C" / "D" / "E" / "F" ; case-insensitive
 
 pct-encoded    =  "%" HEXDIG HEXDIG
-unreserved     =  ALPHA / DIGIT / "-" / "." / "_" / "~"
-sub-delims     =  "!" / "$" / "&" / "'" / "(" / ")"
-               /  "*" / "+" / "," / ";" / "="
 
 ucschar        =  %xA0-D7FF / %xF900-FDCF / %xFDF0-FFEF
                /  %x10000-1FFFD / %x20000-2FFFD / %x30000-3FFFD
