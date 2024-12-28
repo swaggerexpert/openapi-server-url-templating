@@ -8,7 +8,6 @@
 [![Tidelift](https://tidelift.com/badges/package/npm/openapi-server-url-templating)](https://tidelift.com/subscription/pkg/npm-openapi-server-url-templating?utm_source=npm-openapi-server-url-templating&utm_medium=referral&utm_campaign=readme)
 
 [Server URL Templating](https://spec.openapis.org/oas/v3.1.1.html#server-object) supports [Server Variables](https://spec.openapis.org/oas/v3.1.1.html#server-variable-object). Variable substitutions will be made when a variable is named in `{`brackets`}`.
-
 This mechanism is used by [Server Object](https://spec.openapis.org/oas/v3.1.1.html#server-object)
 of [OpenAPI specification](https://spec.openapis.org/).
 
