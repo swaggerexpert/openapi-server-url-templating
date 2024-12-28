@@ -7,21 +7,23 @@
 [![try on RunKit](https://img.shields.io/badge/try%20on-RunKit-brightgreen.svg?style=flat)](https://npm.runkit.com/openapi-server-url-templating)
 [![Tidelift](https://tidelift.com/badges/package/npm/openapi-server-url-templating)](https://tidelift.com/subscription/pkg/npm-openapi-server-url-templating?utm_source=npm-openapi-server-url-templating&utm_medium=referral&utm_campaign=readme)
 
-[Server URL Templating](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#server-object) supports [Server Variables](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#server-variable-object). Variable substitutions will be made when a variable is named in `{`brackets`}`.
+[Server URL Templating](https://spec.openapis.org/oas/v3.1.1.html#server-object) supports [Server Variables](https://spec.openapis.org/oas/v3.1.1.html#server-variable-object). Variable substitutions will be made when a variable is named in `{`brackets`}`.
 
-This mechanism is used by [Server Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#server-object)
-of [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification).
+This mechanism is used by [Server Object](https://spec.openapis.org/oas/v3.1.1.html#server-object)
+of [OpenAPI specification](https://spec.openapis.org/).
 
-`openapi-server-url-templating` is a **parser**, **validator** and **substitution mechanism** for OpenAPI Server URL Templating. It supports
-Server Object URL Templating defined in following OpenAPI specification versions:
+`openapi-server-url-templating` is a **parser**, **validator** and **substitution mechanism** for OpenAPI Server URL Templating,
+which played a [foundational role](https://github.com/OAI/OpenAPI-Specification/pull/4264) in defining the official ANBF grammar for Server URL Templating.
 
-- [OpenAPI 3.0.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.0.md#server-object)
-- [OpenAPI 3.0.1](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.1.md#server-object)
-- [OpenAPI 3.0.2](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#server-object)
-- [OpenAPI 3.0.3](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#server-object)
-- [OpenAPI 3.0.4](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.4.md#server-object)
-- [OpenAPI 3.1.0](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#server-object)
-- [OpenAPI 3.1.1](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.1.md#server-object)
+It supports Server Object URL Templating defined in following OpenAPI specification versions:
+
+- [OpenAPI 3.0.0](https://spec.openapis.org/oas/v3.0.0.html)
+- [OpenAPI 3.0.1](https://spec.openapis.org/oas/v3.0.1.html)
+- [OpenAPI 3.0.2](https://spec.openapis.org/oas/v3.0.2.html)
+- [OpenAPI 3.0.3](https://spec.openapis.org/oas/v3.0.3.html)
+- [OpenAPI 3.0.4](https://spec.openapis.org/oas/v3.0.4.html)
+- [OpenAPI 3.1.0](https://spec.openapis.org/oas/v3.1.0.html)
+- [OpenAPI 3.1.1](https://spec.openapis.org/oas/v3.1.1.html)
 
 <table>
   <tr>
@@ -207,7 +209,7 @@ test('https://gigantic-server.com/base-path', { strict: true }); // => false (do
 
 #### Substitution
 
-Substituting a Server URL Templating is as simple as importing the **substitute** function and calling it.
+Performing Server URL template substitution is as simple as importing the **substitute** function and calling it.
 
 ```js
 import { substitute } from 'openapi-server-url-templating';
