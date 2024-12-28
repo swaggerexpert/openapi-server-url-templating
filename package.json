@@ -1,6 +1,6 @@
 {
   "name": "openapi-server-url-templating",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "OpenAPI Server URL templating parser, validator and substitution mechanism.",
   "main": "./cjs/index.cjs",
   "types": "./types/index.d.ts",
